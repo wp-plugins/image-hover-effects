@@ -14,6 +14,7 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 
 <a href="http://labibahmed.com/image-hover-effects-demo/">See DEMO Here</a><br>
 <h4 style="color:#FDDB5A;">Be Open Hearted.Appreciate my work by Rating it</h4>
+<a href="https://wordpress.org/support/view/plugin-reviews/image-hover-effects#postform">Rate Now</a><br>
 
 
 <h3>Features</h3>
