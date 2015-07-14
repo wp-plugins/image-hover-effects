@@ -13,7 +13,7 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 Image Hover Effects is an amazing plugin that will allow user to add 40+ hover effects to images with captions.It include 40+ hover effects with 2 different styles and fully controllable admin options.You can create multiple categories with multiple shortcodes.
 
 <a href="http://labibahmed.com/image-hover-effects-demo/">See DEMO Here</a><br>
-<h3>Be open hearted and Appriciate my work by Rating it</h3>
+<h4 style="color:#FDDB5A;">Be Open Hearted.Appreciate my work by Rating it</h4>
 
 
 <h3>Features</h3>
