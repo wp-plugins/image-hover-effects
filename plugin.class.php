@@ -41,7 +41,8 @@
 			?>
 			<div class="wrapper" id="caption">
 				<h2>Image Hover Effects</h2>
-				<b>Note:</b> Newly added Image will be at the top
+				<b>Note:</b> Newly added Image will be at the top <br>
+				<h4>Be Open Hearted<a href="https://wordpress.org/support/view/plugin-reviews/image-hover-effects#postform">Rate Plugin</a></h4>
 				<hr>
 				<div id="faqs-container" class="accordian">
 				<?php if (isset($saved_captions['posts'])) { ?>
