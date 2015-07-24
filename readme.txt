@@ -4,7 +4,7 @@ Tags: image caption hover, css3 animations, css3 hover effect, css3 transition, 
 Donate link: http://labibahmed.com/get-in-touch/
 Requires at least: 3.5
 Tested up to: 4.2.2
-Stable tag: 2.0
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
