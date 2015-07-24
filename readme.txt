@@ -54,3 +54,4 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 
 = 2.0 =
 * CSS issue resolved
+
