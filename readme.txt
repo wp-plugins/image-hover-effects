@@ -16,7 +16,8 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 <h4 style="color:#FDDB5A;">Be Open Hearted.Appreciate my work by Rating it</h4>
 <a href="https://wordpress.org/support/view/plugin-reviews/image-hover-effects#postform">Rate Now</a><br>
 
-<iframe src="https://player.vimeo.com/video/134468076" width="500" height="282" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/134468076">image caption hover</a> from <a href="https://vimeo.com/user42306769">Labib Ahmed</a> on <a href="https://vimeo.com">Vimeo</a>.</p> <p>This is a video tutorial for the image hover effects plugin at wordpress.org</p>
+<h4>Video Tutorial</h4>
+[vimeo https://vimeo.com/134468076]
 
 
 <h3>Features</h3>
