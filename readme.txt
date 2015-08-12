@@ -14,12 +14,30 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 
 <a href="http://labibahmed.com/image-hover-effects-pro/">See DEMO Here</a><br>
 
+<a href="http://codecanyon.net/item/image-hover-effects/12386610">Download Pro Version</a><br>
+<h3>Pro Features</h3>
+<ul>
+	<li>Custom Width for Images</li>
+	<li>Custom Height for Images</li> 
+	<li>Custom Border</li> 
+	<li>Custom Border Color</li> 
+	<li>Custom Border Width</li> 
+	<li>Custom Background Color Option for Caption</li> 
+	<li>More Hover Effects</li> 
+	<li>Fully Compatible with any theme</li> 
+	<li>Custom Heading Size</li> 
+	<li>Custom Description Size</li> 
+	<li>Fully Responsive</li>
+	<li>More Gridding Options</li>
+	<li>HTML support added in description box</li>
+</ul>
+
 
 <h4>Video Tutorial</h4>
 [vimeo https://vimeo.com/134468076]
 
 
-<h3>Features</h3>
+<h3> Free Features</h3>
 <ul>
 	<li>Pure CSS3 Effects</li> 
 	<li>Fully Responsive</li> 
@@ -38,6 +56,7 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 	<li>Animated</li>
 	<li>Quick</li>
 </ul>
+
 
 == Installation ==
 1. Go to plugins in your dashboard and select 'add new'
