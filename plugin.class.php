@@ -36,7 +36,7 @@
 		}
 
 		function render_menu_page(){
-			$saved_captions = get_option( 'la_caption_hover_pro' ); 
+			$saved_captions = get_option( 'la_caption_hover' ); 
 
 			?>
 			<div class="wrapper" id="caption">
