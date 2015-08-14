@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-	jQuery('.moreimages span').remove();
+    jQuery('.moreimages span').remove();
     jQuery('.preview').hide();
     jQuery('#la-loader').hide();
   jQuery('#la-saved').hide();
@@ -12,22 +12,23 @@ jQuery(document).ready(function($) {
     setTimeout(function() {
         jQuery('.content > .ui-accordion-content').first().addClass('firstelement');
     }, 50);
-    var sCounter = jQuery('#caption').find('.fullshortcode').attr('id');
+    var sCounter = jQuery('#caption').find('.fullshortcode:last').attr('id');
+    console.log(sCounter);
 
-	jQuery("div.accordian").accordion({
+    jQuery("div.accordian").accordion({
     heightStyle: "content",
     collapsible: true, 
     changestart: function (event, ui) {
         if ($(event.currentTarget).hasClass("item")) {
             event.preventDefault();
             $(event.currentTarget).removeClass("ui-corner-top").addClass("ui-corner-all");
-        	}
-    	}
-	});
+            }
+        }
+    });
 
-	//    Adding Image
+    //    Adding Icmage
 
-	 jQuery('#caption').on('click','.addimage',function( event ){
+     jQuery('#caption').on('click','.addimage',function( event ){
      
         event.preventDefault();
      
@@ -56,8 +57,8 @@ jQuery(document).ready(function($) {
         // Finally, open the modal 
         la_caption_hover.open();
     });
-	
-	// Removing Uploades Image
+    
+    // Removing Uploades Image
 
 
     jQuery('#caption').on('click', '.dashicons-dismiss', function() {
@@ -66,19 +67,30 @@ jQuery(document).ready(function($) {
 
     // Cloning Add More Images 
 
-	jQuery('#caption').on('click', '.moreimg', function() { 
+    jQuery('#caption').on('click', '.moreimg', function() { 
             var parent = jQuery(this).closest('.content');
             var heading = jQuery(this).closest('.content').find('h3:first').clone();
-	        var content = jQuery(this).closest('.content').find('h3:first').next().clone().removeClass('firstelement');
+            var content = jQuery(this).closest('.content').find('h3:first').next().clone().removeClass('firstelement');
             jQuery(parent).prepend(content);
             jQuery(parent).prepend(heading);
+            parent.find('.wp-picker-container').remove();
+            parent.find('.insert-picker:eq(0)').append('<input type="text" class="head-color" value="#fff" />');
+            // parent.find('.insert-picker:eq(1)').append('<input type="text" class="headingbg" value="#333" />');
+            parent.find('.insert-picker:eq(2)').append('<input type="text" class="desc-color" value="#fff" />');
+            // parent.find('.insert-picker:eq(3)').append('<input type="text" class="capbordercolor" value="#fff" />');
+            // parent.find('.insert-picker:eq(4)').append('<input type="text" class="capbgcolor" value="#333" />');
+
+            parent.find('.head-color,.desc-color').wpColorPicker();
             jQuery('.accordian').accordion('refresh'); 
 
-	});
+    });
 
         jQuery('#caption').on('click', '.addcat', function() { 
             sCounter++;
-            var parent = jQuery(this).closest('#faqs-container');
+            if (sCounter >= 4) {
+                alert('Get Pro to add more categories');
+            } else{
+                var parent = jQuery(this).closest('#faqs-container');
             var head = jQuery('.addcat').parents().find('#faqs-container').find('h3:first').clone().appendTo(parent);
             var content = jQuery('.addcat').parents().find('#faqs-container').find('h3:first').next().clone().removeClass('firstelement').appendTo(parent);
             content.find('button.fullshortcode').attr('id', sCounter);
@@ -93,7 +105,21 @@ jQuery(document).ready(function($) {
                     }
                 }
             });
+
+            var colorappend = jQuery('.addcat').parents().find('#faqs-container').find('.accordian:last').find('.ui-accordion-content');
+            // console.log(colorappend);
+
+            colorappend.find('.wp-picker-container').remove();
+            colorappend.find('.insert-picker:eq(0)').append('<input type="text" class="head-color" value="#fff" />');
+            // colorappend.find('.insert-picker:eq(1)').append('<input type="text" class="headingbg" value="#333" />');
+            colorappend.find('.insert-picker:eq(2)').append('<input type="text" class="desc-color" value="#fff" />');
+            // colorappend.find('.insert-picker:eq(3)').append('<input type="text" class="capbordercolor" value="#fff" />');
+            // colorappend.find('.insert-picker:eq(4)').append('<input type="text" class="capbgcolor" value="#333" />');
+
+            colorappend.find('.head-color,.desc-color').wpColorPicker();
             jQuery('.accordian').accordion('refresh');
+            }
+            
 
     });
 
@@ -154,7 +180,6 @@ jQuery(document).ready(function($) {
                 images.cap_headcolor =  jQuery(this).find('.head-color').val(),
                 images.cap_desccolor =  jQuery(this).find('.desc-color').val(),
                 images.cap_grid = jQuery(this).find('.capgrid').val();
-                images.cap_colored = jQuery(this).find('.capcoloured').val();
                 images.shortcode = jQuery(this).next().find('.fullshortcode').attr('id');
                 images.counter = jQuery(this).siblings().find('.fullshortcode').attr('id'); 
                 cats.allcapImages.push(images);

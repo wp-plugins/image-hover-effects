@@ -12,12 +12,32 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 == Description ==
 Image Hover Effects is an amazing plugin that will allow user to add 40+ hover effects to images with captions.It include 40+ hover effects with 2 different styles and fully controllable admin options.You can create multiple categories with multiple shortcodes.
 
-<a href="http://labibahmed.com/image-hover-effects-demo/">See DEMO Here</a><br>
-<h4 style="color:#FDDB5A;">Be Open Hearted.Appreciate my work by Rating it</h4>
-<a href="https://wordpress.org/support/view/plugin-reviews/image-hover-effects#postform">Rate Now</a><br>
+<a href="http://labibahmed.com/image-hover-effects-pro/">See DEMO Here</a><br>
+
+<a href="http://codecanyon.net/item/image-hover-effects/12386610">Download Pro Version</a><br>
+<h3>Pro Features</h3>
+<ul>
+	<li>Custom Width for Images</li>
+	<li>Custom Height for Images</li> 
+	<li>Custom Border</li> 
+	<li>Custom Border Color</li> 
+	<li>Custom Border Width</li> 
+	<li>Custom Background Color Option for Caption</li> 
+	<li>More Hover Effects</li> 
+	<li>Fully Compatible with any theme</li> 
+	<li>Custom Heading Size</li> 
+	<li>Custom Description Size</li> 
+	<li>Fully Responsive</li>
+	<li>More Gridding Options</li>
+	<li>HTML support added in description box</li>
+</ul>
 
 
-<h3>Features</h3>
+<h4>Video Tutorial</h4>
+[vimeo https://vimeo.com/134468076]
+
+
+<h3> Free Features</h3>
 <ul>
 	<li>Pure CSS3 Effects</li> 
 	<li>Fully Responsive</li> 
@@ -37,6 +57,7 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 	<li>Quick</li>
 </ul>
 
+
 == Installation ==
 1. Go to plugins in your dashboard and select 'add new'
 2. Search for 'Image Hover Effects' and install it
@@ -55,3 +76,5 @@ Image Hover Effects is an amazing plugin that will allow user to add 40+ hover e
 = 2.0 =
 * CSS issue resolved
 
+= 3.0 =
+* Multiple categories shortcode issue resolved
