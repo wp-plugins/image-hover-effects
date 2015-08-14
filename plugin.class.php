@@ -36,14 +36,14 @@
 		}
 
 		function render_menu_page(){
-			$saved_captions = get_option( 'la_caption_hover' );
+			$saved_captions = get_option( 'la_caption_hover_pro' ); 
 
 			?>
 			<div class="wrapper" id="caption">
 				<h2>Image Hover Effects</h2>
 				<b>Note:</b> Newly added Image will be at the top <br>
-				<h4>Be Open Hearted<a href="https://wordpress.org/support/view/plugin-reviews/image-hover-effects#postform">Rate Plugin</a></h4>
-				<hr>
+				<b>Note:</b> Newly added Category will be at the bottom <br>
+				<a href="http://codecanyon.net/item/image-hover-effects/12386610"><h4>Get Pro Version</h4></a>
 				<div id="faqs-container" class="accordian">
 				<?php if (isset($saved_captions['posts'])) { ?>
 				<?php foreach ($saved_captions['posts'] as $key => $data) { 
@@ -70,7 +70,7 @@
 				        <div>
 				        	<table class="form-table">
 				        		<tr>
-				        			<td style="width:20%">
+				        			<td style="width:30%">
 				        				<strong><?php _e( 'Category Name', 'la-captionhover' ); ?></strong>
 				        			</td>
 
@@ -78,7 +78,7 @@
 				        				<input type="text" class="catname widefat form-control" value="<?php echo $data['cat_name']; ?>">
 				        			</td>
 
-				        			<td style="width:50%">
+				        			<td style="width:40%">
 				        				<p class="description"><?php _e( 'Name the category for images.Category name should be same for everyimage', 'la-captionhover' ); ?></p>
 				        			</td>
 				        		</tr>
@@ -96,24 +96,24 @@
 				        			</td>
 				        		</tr>
 				        	</table>
-				        	<h4><?php _e( 'General Settings', 'la-captionhover' ); ?></h4>
-				        	<hr>
-							<table class="form-table">
 				        	<button class="addimage button"><?php _e( 'Upload Image', 'la-captionhover' ); ?></button>
 				        	<span class="image">
 				        		<?php if ($data2['cap_img']!='') {
 				        		
 				        			echo '<span><img src="'.$data2['cap_img'].'"><span class="dashicons dashicons-dismiss"></span></span>'; } ?>
 				        		
-				        	</span>
+				        	</span><br>
+				        	<h4><?php _e( 'Caption Settings', 'la-captionhover' ); ?></h4>
+				        	<hr>
+							<table class="form-table">
 								<tr>
-									<td style="width:20%">
+									<td style="width:30%">
 										<strong><?php _e( 'Caption Heading', 'la-captionhover' ); ?></strong>
 									</td>
 									<td style="width:30%">
 										<input type="text" class="widefat capheading form-control" value="<?php echo $data2['cap_head']; ?>">
 									</td>	
-									<td style="width:50%">
+									<td style="width:40%">
 										<p class="description"><?php _e( 'Type Caption heading', 'la-captionhover' ); ?></p>
 									</td>
 								</tr>
@@ -139,21 +139,117 @@
 										<p class="description"><?php _e( 'Give link to caption', 'la-captionhover' ); ?></p>
 									</td>
 								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Open Link in New Tab', 'la-captionhover' ); ?></strong><br><i>(Available in Pro)</i>
+									</td>
+									<td>
+										<select class="capnewtab form-control" disabled>
+											<option <?php if ( $data2['cap_newtab'] == 'yes' ) echo 'selected="selected"'; ?> value="yes"><?php _e( 'Yes', 'la-captionhover' ); ?></option>
+											<option <?php if ( $data2['cap_newtab'] == 'no' ) echo 'selected="selected"'; ?> value="no"><?php _e( 'No', 'la-captionhover' ); ?></option>
+										</select>
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Choose want to open link in new tab or not.', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Heading Font Size ', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="headfontsize form-control" disabled value="<?php echo $data2['cap_headsize']; ?>" placeholder="Available in Pro">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give the font size(it will be in px) of Caption Heading.(Default 22)', $domain ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Description Font Size', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="descfontsize form-control" placeholder="Available in Pro" disabled value="<?php echo $data2['cap_descsize']; ?>">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give the font size(it will be in px) of Caption Description.(Default 12)', $domain ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Heading Color', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="head-color" value="<?php echo $data2['cap_headcolor']; ?>">
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Choose font color for caption heading', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
+
+			  					<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Heading Background Color(Only For Square Style);', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="headingbg form-control" disabled placeholder="Available in Pro">
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Caption Heading Background Color.It will be only for Square Style', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
+
+								<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Description Color', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="desc-color" value="<?php echo $data2['cap_desccolor']; ?>">
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Choose font color for caption description', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
 							</table>
 							<h4><?php _e( 'Hover Settings', 'la-captionhover' ); ?></h4>
 							<hr>
 							<table class="form-table">
 								<tr>
-									<td style="width:20%">
-										<strong><?php _e( 'Thumbnail Style', 'la-captionhover' ); ?></strong>
+									<td style="width:30%">
+										<strong><?php _e( 'Thumbnail Width', 'la-captionhover' ); ?></strong>
 									</td>
 									<td style="width:30%">
+										<input type="text" class="form-control thumbwidth" placeholder="Available in Pro" disabled value="<?php echo $data2['cap_thumbwidth']; ?>">
+									</td>
+									<td style="width:40%">
+										<p class="description"><?php _e( 'Give thumbnail width (keep width and height same for circle style) for the thumbnail.Default(220)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<strong><?php _e( 'Thumbnail Height', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="text" class="form-control thumbheight" disabled placeholder="Available in Pro" value="<?php echo $data2['cap_thumbheight']; ?>">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give thumbnail height (keep width and height same for circle style) for the thumbnail.Default(220)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<strong><?php _e( 'Thumbnail Style', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
 										<select class="styleopt form-control widefat">
 										  <option value="circle" <?php if ( $data2['cap_style'] == 'circle' ) echo 'selected="selected"'; ?>><?php _e( 'Circle', 'la-captionhover' ); ?></option>
 										  <option value="square" <?php if ( $data2['cap_style'] == 'square' ) echo 'selected="selected"'; ?>><?php _e( 'Square', 'la-captionhover' ); ?></option> 
 										</select>
 									</td>
-									<td style="width:50%">
+									<td>
 										<p class="description"><?php _e( 'Thumbnail style for the Caption', 'la-captionhover' ); ?></p>
 									</td>
 								</tr>
@@ -207,71 +303,69 @@
 									</td>
 								</tr>
 
-
 								<tr>
-				  					<td>
-				  						<strong><?php _e( 'Caption Heading Color', 'la-captionhover' ); ?></strong>
-				  					</td>
-				  					<td class="insert-picker">
-				  						<input type="text" class="head-color" value="<?php echo $data2['cap_headcolor']; ?>">
-				  					</td>
-				  					<td>
-				  						<p class="description"><?php _e( 'Choose font color for caption heading', 'la-captionhover' ); ?>.</p>
-				  					</td>
-			  					</tr>
-
-								<tr>
-				  					<td>
-				  						<strong><?php _e( 'Caption Description Color', 'la-captionhover' ); ?></strong>
-				  					</td>
-				  					<td class="insert-picker">
-				  						<input type="text" class="desc-color" value="<?php echo $data2['cap_desccolor']; ?>">
-				  					</td>
-				  					<td>
-				  						<p class="description"><?php _e( 'Choose font color for caption description', 'la-captionhover' ); ?>.</p>
-				  					</td>
-			  					</tr>
+									<td>
+										<strong><?php _e( 'Thumbnail Border Width(For Circle Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="capborderwidth form-control" disabled placeholder="Available in Pro" value="<?php echo $data2['cap_border_width']; ?>">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give border width(if want to hide border put 0) for the thumbnail of circle style.(Default 16)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
 
 								<tr>
 									<td>
-										<strong><?php _e( 'Images Per Row', 'la-captionhover' ); ?></strong>
+										<strong><?php _e( 'Thumbnail Border Width(For Square Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="capborderwidthsq form-control" disabled placeholder="Avaiable in Pro" value="<?php echo $data2['cap_border_width_square']; ?>">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give border width(if want to hide border put 0) for the thumbnail of square style.(Default 8)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<strong><?php _e( 'Border Color(Only for Square Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td class="insert-picker">
+										<input type="text" class="capbordercolor form-control" disabled>
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Choose border color for the thumbnail(Only for the Square Style) ', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<strong><?php _e( 'Images Per Row', 'la-captionhover' ); ?></strong> <br><i>More Options in Pro</i>
 									</td>
 									<td>
 										<select class="capgrid form-control widefat">
 										  <option value="12" <?php if ( $data2['cap_grid'] == '12' ) echo 'selected="selected"'; ?>>1</option>
 										  <option value="6" <?php if ( $data2['cap_grid'] == '6' ) echo 'selected="selected"'; ?>>2</option>
-										  <option value="4" <?php if ( $data2['cap_grid'] == '4' ) echo 'selected="selected"'; ?>>3</option>
-										  <option value="3" <?php if ( $data2['cap_grid'] == '3' ) echo 'selected="selected"'; ?>>4</option>
 										</select>
 									</td>
 									<td>
 										<p class="description"><?php _e( 'Select how many images show in one row.Keep it same for every Image', 'la-captionhover' ); ?></p>
 									</td>
-								</tr>
+								</tr> 
+
 								<tr> 
-									<td><strong><?php _e( 'Caption Coloured Background', 'la-captionhover' ); ?></strong></td>
 									<td>
-										<input type="checkbox" id="capcolored" name="colored" class="capcoloured" value="colored">
-										
+										<strong><?php _e( 'Caption Background Color', 'la-captionhover' ); ?></strong>
 									</td>
-									<td><p class="description"><?php _e( 'Check if you want a coloured background for caption', 'la-captionhover' ); ?></p></td>
+									<td class="insert-picker">
+				  						<input type="text" class="capbgcolor form-control" disabled placeholder="Available in Pro" >
+				  					</td>
+									<td><p class="description"><?php _e( 'Choose background color for the caption.(Default #333)', 'la-captionhover' ); ?></p></td>
 								</tr>
+
 							</table>
 							<button class="button removeitem"><span class="dashicons dashicons-dismiss" title="Delete"></span><?php _e( 'Remove Image', 'la-captionhover' ); ?></button><br> 
-							<div class="row">
-							<button class="enableprev button">Preview Image</button><p class="description">Preview Image after saving</p>
-							<div class="col-sm-4"></div>
-								<div class="col-sm-4 preview">
-		                  			<div class="ih-item <?php echo $data2['cap_style']; ?> <?php echo $data2['cap_effect']; ?> <?php echo $data2['cap_direction']; ?>"><a href="#">
-		                      			<div class="img"><img src="<?php echo $data2['cap_img']; ?>" alt="img"></div>
-					                    <div class="info">
-					                        <h3><?php echo $data2['cap_head']; ?></h3>
-					                        <p><?php echo $data2['cap_desc']; ?></p>
-					                    </div></a>
-					                </div>
-	                			</div>
-	                			<div class="col-sm-4"></div>
-                			</div>
 							
 
 				        </div> 
@@ -321,13 +415,14 @@
 				        			</td>
 				        		</tr>
 				        	</table>
-				        	<h4><?php _e( 'General Settings', 'la-captionhover' ); ?></h4>
-				        	<hr>
-							<table class="form-table">
 				        	<button class="addimage button"><?php _e( 'Upload Image', 'la-captionhover' ); ?></button>
 				        	<span class="image">
 				        		
-				        	</span>
+				        	</span><br>
+				        	<h4><?php _e( 'Caption Settings', 'la-captionhover' ); ?></h4>
+				        	<hr>
+							<table class="form-table">
+
 								<tr style="width:20%">
 									<td>
 										<strong><?php _e( 'Caption Heading', 'la-captionhover' ); ?></strong>
@@ -361,10 +456,105 @@
 										<p class="description"><?php _e( 'Give link to caption', 'la-captionhover' ); ?></p>
 									</td>
 								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Open Link in New Tab', 'la-captionhover' ); ?></strong><br><i>(Available in Pro)</i>
+									</td>
+									<td>
+										<select class="capnewtab form-control" disabled>
+											<option value="yes"><?php _e( 'Yes', 'la-captionhover' ); ?></option>
+											<option value="no"><?php _e( 'No', 'la-captionhover' ); ?></option>
+										</select>
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Choose want to open link in new tab or not.', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Heading Font Size ', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="headfontsize form-control" disabled placeholder="Available in Pro">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give the font size(it will be in px) of Caption Heading.(Default 22)', $domain ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Description Font Size', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="descfontsize form-control" placeholder="Available in Pro" disabled>
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give the font size(it will be in px) of Caption Description.(Default 12)', $domain ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Heading Color', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="head-color" value="#fff">
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Choose font color for caption heading', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
+
+			  					<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Heading Background Color(Only For Square Style);', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="headingbg form-control" disabled placeholder="Available in Pro" >
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Caption Heading Background Color.It will be only for Square Style', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
+
+								<tr>
+				  					<td>
+				  						<strong><?php _e( 'Caption Description Color', 'la-captionhover' ); ?></strong>
+				  					</td>
+				  					<td class="insert-picker">
+				  						<input type="text" class="desc-color" value="#fff">
+				  					</td>
+				  					<td>
+				  						<p class="description"><?php _e( 'Choose font color for caption description', 'la-captionhover' ); ?>.</p>
+				  					</td>
+			  					</tr>
 							</table>
 							<h4><?php _e( 'Hover Settings', 'la-captionhover' ); ?></h4>
 							<hr>
 							<table class="form-table">
+								<tr>
+									<td style="width:20%">
+										<strong><?php _e( 'Thumbnail Width', 'la-captionhover' ); ?></strong>
+									</td>
+									<td style="width:30%">
+										<input type="text" class="form-control thumbwidth" placeholder="Available in Pro" disabled>
+									</td>
+									<td style="width:50%">
+										<p class="description"><?php _e( 'Give thumbnail width (keep width and height same for circle style) for the thumbnail.Default(220)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<strong><?php _e( 'Thumbnail Height', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="text" class="form-control thumbheight" disabled placeholder="Available in Pro">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give thumbnail height (keep width and height same for circle style) for the thumbnail.Default(220)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
 								<tr>
 									<td style="width:20%">
 										<strong><?php _e( 'Thumbnail Style', 'la-captionhover' ); ?></strong>
@@ -428,42 +618,47 @@
 										<p class="description"><?php _e( 'Select caption direction for the image on hover', 'la-captionhover' ); ?></p>
 									</td>
 								</tr>
-
-								
-								<tr>
-				  					<td>
-				  						<strong><?php _e( 'Caption Heading Color', 'la-captionhover' ); ?></strong>
-				  					</td>
-				  					<td class="insert-picker">
-				  						<input type="text" class="head-color" value="#fff">
-				  					</td>
-				  					<td>
-				  						<p class="description"><?php _e( 'Choose font color for caption heading', 'la-captionhover' ); ?>.</p>
-				  					</td>
-			  					</tr>
-
-								<tr>
-				  					<td>
-				  						<strong><?php _e( 'Caption Description Color', 'la-captionhover' ); ?></strong>
-				  					</td>
-				  					<td class="insert-picker">
-				  						<input type="text" class="desc-color" value="#fff">
-				  					</td>
-				  					<td>
-				  						<p class="description"><?php _e( 'Choose font color for caption description', 'la-captionhover' ); ?>.</p>
-				  					</td>
-			  					</tr>
-
 								<tr>
 									<td>
-										<strong><?php _e( 'Images Per Line', 'la-captionhover' ); ?></strong>
+										<strong><?php _e( 'Thumbnail Border Width(For Circle Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="capborderwidth form-control" disabled placeholder="Available in Pro" value="">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give border width(if want to hide border put 0) for the thumbnail of circle style.(Default 16)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Thumbnail Border Width(For Square Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td>
+										<input type="number" class="capborderwidthsq form-control" disabled placeholder="Avaiable in Pro" value="">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Give border width(if want to hide border put 0) for the thumbnail of square style.(Default 16)', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Border Color(Only for Square Style)', 'la-captionhover' ); ?></strong>
+									</td>
+									<td class="insert-picker">
+										<input type="text" class="capbordercolor form-control" disabled placeholder="Available in Pro">
+									</td>
+									<td>
+										<p class="description"><?php _e( 'Choose border color for the thumbnail(Only for the Square Style) ', 'la-captionhover' ); ?></p>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong><?php _e( 'Images Per Row', 'la-captionhover' ); ?></strong> <br><i>More Options in Pro</i>
 									</td>
 									<td>
 										<select class="capgrid form-control widefat">
 										  <option value="12">1</option>
 										  <option value="6">2</option>
-										  <option value="4">3</option>
-										  <option value="3">4</option>  
 										</select>
 									</td>
 									<td>
@@ -472,12 +667,13 @@
 								</tr>
 
 								<tr> 
-									<td><strong><?php _e( 'Caption Coloured Background', 'la-captionhover' ); ?></strong></td>
 									<td>
-										<input type="checkbox" id="capcolored" name="colored" class="capcoloured" value="colored">
-										
+										<strong><?php _e( 'Caption Background Color', 'la-captionhover' ); ?></strong>
 									</td>
-									<td><p class="description"><?php _e( 'Check if you want a coloured background for caption', 'la-captionhover' ); ?></p></td>
+									<td class="insert-picker">
+				  						<input type="text" class="capbgcolor form-control" disabled placeholder="Available in Pro">
+				  					</td>
+									<td><p class="description"><?php _e( 'Choose background color for the caption.(Default #1a4a72)', 'la-captionhover' ); ?></p></td>
 								</tr>
 
 							</table>
@@ -508,7 +704,7 @@
 			if (isset($saved_captions['posts'])) {
 				
 				ob_start(); ?>
-				<div class="row">
+				<div class="row image-hover-page-container">
 				 <?php foreach ($saved_captions['posts'] as $key => $data) {  ?>
 					<?php  foreach ($data['allcapImages'] as $key => $data2) {  ?>
 						<?php  if ($atts['id']== $data2['counter']) {

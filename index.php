@@ -3,7 +3,7 @@
 	/*
 	Plugin Name: Image Hover Effects
 	Description: Add beautiful Image hover effects with caption to your website.
-	Plugin URI: http://labibahmed.com/caption-hover-effects
+	Plugin URI: http://labibahmed.com/image-hover-effects
 	Author: Labib Ahmed
 	Author URI: http://labibahmed.com
 	Version: 1.0
