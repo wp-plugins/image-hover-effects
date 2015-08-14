@@ -3,8 +3,8 @@ Contributors: Labibahmed42
 Tags: image caption hover, css3 animations, css3 hover effect, css3 transition, hover, hover effect, hover effect wordpress plugin, image caption, image hover, pure css3 effects, wp image caption,amazing hover effects
 Donate link: http://labibahmed.com/get-in-touch/
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 3.0
+Tested up to: 4.2.4
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
